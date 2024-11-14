@@ -3,7 +3,6 @@ package studio8;
 import java.util.Scanner;
 
 public class Quiz {
-
 	private Question[] questions;
 	
 	public Quiz(Question[] questions) {
@@ -27,6 +26,11 @@ public class Quiz {
 	
 	public void takeQuiz() {
 		//FIXME
+		for(Question q : questions) {
+			q.displayPrompt();
+			System.out.println("Points: " + q.checkAnswer(getUserAnswer()));
+		}
+		System.out.println("Total Points: " + getTotalPoints());
 	}
 	
 	public static void main(String[] args) {
